@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        main > *{
+            background: silver;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 960px; 
+            min-height: 600px;
+            margin: 20px auto;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 80px 2fr 1fr 50px;
+            grid-template-areas: 
+                    "logo nav"
+                    "fpi fpi"
+                    "prod1 prod2"
+                    "foot foot";
+        }
+
+        .logo                   {grid-area: logo; margin-right: 250px;}
+        nav div                 {padding: 15px;}
+        nav                     {
+                                    grid-area: nav;
+                                    display: grid;
+                                    grid-template: 1fr / repeat(4, 1fr);
+                                    justify-items: center;
+                                    align-self: center;
+                                }
+        section:nth-of-type(1)  {grid-area: fpi;}
+        section:nth-of-type(2)  {grid-area: prod1;}
+        section:nth-of-type(3)  {grid-area: prod2;}
+        footer                  {grid-area: foot; display: grid; align-items: center; justify-items: center;}
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo">Company Logo</div>
+        <nav>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+        </nav>
+        <section>Featured Product Image</section>
+        <section>Product 1</section>
+        <section>Product 2</section>
+        <footer>Copyright Notice</footer>
+    </main>
+</body>
+</html>
